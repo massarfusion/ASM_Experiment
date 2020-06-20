@@ -7,6 +7,7 @@ data segment
     digit db 0
     other db 0
     ten db 10
+    welcome db "Please enter a string and press ENTER$"
     lstr db "char number==$"
     dstr db "digit number==$"
     ostr db "others number==$"
@@ -23,6 +24,12 @@ start:
     mov ax, data
     mov ds, ax
     mov es, ax
+    
+    lea dx,welcome
+    mov ah£¬9
+    int 21h
+    
+    CALL reline
     
     mov cx,0
     
